@@ -1,0 +1,57 @@
+comments: true
+
+# highlighter: pygments
+highlighter: rouge
+
+markdown: redcarpet
+redcarpet:
+  extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "with_toc_data"]
+# markdown: kramdown
+# kramdown:
+#     input: GFM
+#     syntax_highlighter: rouge
+
+gems: [jekyll-paginate]
+paginate: 20
+paginate_path: "/page:num/"
+layout: post
+excerpt_separator: "[-----]"
+permalink: /:year/:month/:day/:title.html
+
+# mode: dev
+mode: product
+baseurl: "/webcourse" # the subpath of your site, e.g. /blog
+url: "https://zzzlarry.github.io" # the base hostname & protocol for your site
+github_username:  zzzlarry
+name: Web課程
+title: 網頁系統開發課程
+description: "網頁系統開發課程 weblog"
+
+my:
+    displayName: AU-CSIE
+    realName: LarryLan
+    realName_cn: 藍子朋
+    jobTitle: "Web programmer"
+    contact:
+        email: 105021018@live.asia.edu.tw
+        github: http://www.github.com/zzzlarry
+    skills:
+        frontend: ["HTML | Markdown", "CSS | SASS", "JS | jQuery", "Bootstrap"]
+        backend: ["PHP", "MySQL", "Asp.Net", "JSP", "MongoDB", "node.js"]
+        tools: ["VS Code", "Git | Github", "Linux", "Jekyll", "Hexo"]
+
+collections:
+    qqGroupGuide:
+        output: true
+
+defaults:
+  - scope:
+        path: ""
+        type: "posts"
+    values:
+        excerpt: "{{ page.content }} | slice: 0 300"
+  - scope:
+        path: ""
+        type: "qqGroupGuide"
+    values:
+        layout: markdownreader_bare
