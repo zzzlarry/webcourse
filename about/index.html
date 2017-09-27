@@ -1,0 +1,49 @@
+---
+layout: base
+---
+{% assign my = site.my %}
+<div class="row" id="about">
+    <header id="title">
+        <img src="{{ site.baseurl }}/images/me.png">
+        <h1>{{ my.realName_cn }} | <small>{{ my.jobTitle | upcase }}</small></h1>
+    </header>
+
+    <section id="intro">
+        <h2>在亞大資工的學習</h2>
+        <p>每個星期都要來上課、都要動手做...</p>
+        <p>網站技術是許許多多的細節建立起來的。</p>
+        <p>一個學期後，你會看到你自己的進步。</p>
+    </section>
+
+    <section id="skillsets">
+        <h2>SKILLSETS</h2>
+        <ul id="frontend">
+            <i class="fa fa-tv">前端</i>
+            {% for skill in my.skills.frontend %}
+            <li>{{ skill }}</li>
+            {% endfor %}
+        </ul>
+        <ul id="backend">
+            <i class="fa fa-cog"> 後端</i>
+            {% for skill in my.skills.backend %}
+            <li>{{ skill }}</li>
+            {% endfor %}
+        </ul>
+        <ul id="tools">
+            <i class="fa fa-wrench"> 工具</i>
+            {% for skill in my.skills.tools %}
+            <li>{{ skill }}</li>
+            {% endfor %}
+        </ul>
+    </section>
+
+    <section id="findme">
+        <h2>FIND ME ON</h2>
+        <ul>
+            <li><a href="https://www.facebook.com/htchu.taiwan"><i class="fa fa-facebook-square"></i></a></li>
+            <li><a href="http://aiplab.net/forum/index.php?board=143.0"><i class="fa fa-pencil-square-o"></i></a></li>
+        </ul>
+    </section>
+
+</div>
+{% include disqus_load.html %}

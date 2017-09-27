@@ -1,0 +1,36 @@
+{% include mode_switcher.html %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ page.title }}</title>
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/stylesheets/markdownreader_bare.css">
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/stylesheets/pygments_monokai.css">
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/stylesheets/code_block.css">
+    <!-- favicon -->
+    <link rel="shortcut icon" href="{{ site.baseurl }}/favicon.ico" type="image/icon">
+    <link rel="icon" href="{{ site.baseurl }}/favicon.ico" type="image/icon">
+
+    <style type="text/css">
+        #disqus_thread {
+            margin-top: 3rem;
+        }
+    </style>
+</head>
+<body>
+
+<div id="markdown-container">
+    {{ content }}
+
+    {% include disqus_load.html %}
+</div>
+
+<div id="markdown-outline">
+</div>
+
+<div id="markdown-backTop" onclick="window.scrollTo(0,0)"></div>
+
+
+<script type="text/javascript" src="{{ site.baseurl }}/javascripts/markdownreader_bare.js"></script>
+</body>
+</html>
